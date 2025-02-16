@@ -1,3 +1,10 @@
+import Navigation from "./components/navigation";
+
 export default function Page(){
-    return <h1>안녕 넥스트</h1>;
+    return (
+    <div>
+        <Navigation />
+        <h1>안녕</h1>
+    </div>
+    );
 }
