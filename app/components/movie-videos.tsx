@@ -1,3 +1,4 @@
+import { Key } from "react";
 import { API_URL } from "../(home)/page";
 import styles from "../styles/movie-videos.module.css";
 
@@ -10,7 +11,7 @@ export default async function MovieVideos({ id }: { id: string }) {
   const videos = await getVideos(id);
   return (
     <div className={styles.container}>
-      {videos.map((video) => (
+      {videos.map((video: { id: Key; key: any; name: string; }) => (
         <iframe
           key={video.id}
           src={`https://youtube.com/embed/${video.key}`}
