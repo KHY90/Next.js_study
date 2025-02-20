@@ -1,4 +1,4 @@
-import { API_URL } from "../(home)/page";
+import { API_URL } from "../constants";
 import styles from "../styles/cast-info.module.css";
 
 interface CastMember {

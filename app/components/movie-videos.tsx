@@ -1,6 +1,6 @@
 import { Key } from "react";
-import { API_URL } from "../(home)/page";
 import styles from "../styles/movie-videos.module.css";
+import { API_URL } from "../constants";
 
 async function getVideos(id: string) {
   const response = await fetch(`${API_URL}/${id}/videos`);
