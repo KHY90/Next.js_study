@@ -1,24 +1,26 @@
 import { getMovie } from "../../../../components/movie-info";
 import { Suspense } from "react";
-import MovieProvider from "../../../../components/MovieProvider";
+import MovieCredits from "../../../../components/MovieCredits";
 
 interface IParams {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
-export async function generateMetadata({ params: { id } }: IParams) {
+export async function generateMetadata({ params }: IParams) {
+  const { id } = await params;
   const movie = await getMovie(id);
   return {
     title: movie.title,
   };
 }
 
-export default async function ProviderPage({ params }: IParams) {
-  const { id } = params;
+export default async function CreditsPage({ params }: IParams) {
+  const { id } = await params;
+
   return (
     <div>
-      <Suspense fallback={<h1>Loading movie 공급자</h1>}>
-        <MovieProvider id={id} />
+      <Suspense fallback={<h1>Loading movie 크래딧</h1>}>
+        <MovieCredits id={id} />
       </Suspense>
     </div>
   );

@@ -2,13 +2,14 @@ import { Suspense } from "react";
 import MovieInfo, { getMovie } from "../../../components/movie-info";
 import MovieVideos from "../../../components/movie-videos";
 import Link from "next/link";
-import styles from "../../../styles/movie-detail.module.css"; // 새로운 CSS 추가
+import styles from "../../../styles/movie-detail.module.css";
 
 interface IParams {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
-export async function generateMetadata({ params: { id } }: IParams) {
+export async function generateMetadata({ params }: IParams) {
+  const { id } = await params;
   const movie = await getMovie(id);
   return {
     title: movie.title,
@@ -16,7 +17,7 @@ export async function generateMetadata({ params: { id } }: IParams) {
 }
 
 export default async function MovieDetailPage({ params }: IParams) {
-  const { id } = params;
+  const { id } = await params;
   return (
     <div>
       <Suspense fallback={<h1>Loading movie info</h1>}>
