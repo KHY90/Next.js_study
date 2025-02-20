@@ -1,0 +1,61 @@
+.container {
+  text-align: center;
+  padding: 20px;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.loading {
+  text-align: center;
+  font-size: 18px;
+  color: #bbb;
+}
+
+.moviesGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.movieCard {
+  width: 200px;
+  background-color: #222;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.movieCard:hover {
+  transform: scale(1.05);
+}
+
+.movieImage {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.movieTitle {
+  font-size: 16px;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.movieInfo {
+  font-size: 14px;
+  color: #ddd;
+}
+
+.movieOverview {
+  font-size: 12px;
+  color: #bbb;
+  margin-top: 5px;
+  text-align: left;
+  padding: 0 10px;
+}
