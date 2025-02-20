@@ -28,3 +28,8 @@ Loading UI and Streaming
 
 Page 단위 로딩 => loading.tsx
 서버 컴포넌트 단위 로딩 => Suspense
+
+prefetch : prefecth은 Link 컴포넌트가 사용자의 뷰포트에 들어갈 때(초기 또는 스크롤을 통해) 발생합니다.
+Next.js는 링크드된 라우트(href에 지정된 라우트)와 해당 데이터를 백그라운드에서 prefetch하고 load하여 클라이언트 측 네비게이션 성능을 향상시킵니다.
+prefecth는 프로덕션에서만 활성화됩니다.
+기본값 null: prefetch 동작은 정적 또는 동적 경로에 따라 달라집니다.

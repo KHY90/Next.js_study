@@ -25,13 +25,13 @@ export default async function MovieDetailPage({ params }: IParams) {
       </Suspense>
       
       <div className={styles.linkContainer}>
-        <Link href={`/movies/${id}/credits`} className={styles.linkBox}>
+        <Link prefetch href={`/movies/${id}/credits`} className={styles.linkBox}>
           View Movie Credits
         </Link>
-        <Link href={`/movies/${id}/providers`} className={styles.linkBox}>
+        <Link prefetch href={`/movies/${id}/providers`} className={styles.linkBox}>
           View Movie Providers
         </Link>
-        <Link href={`/movies/${id}/similar`} className={styles.linkBox}>
+        <Link prefetch href={`/movies/${id}/similar`} className={styles.linkBox}>
           View Movie Similar
         </Link>
       </div>
